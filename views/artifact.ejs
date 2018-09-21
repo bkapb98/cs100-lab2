@@ -1,0 +1,14 @@
+<%- include('header') %>
+
+  <h1> Object Listing</h1>
+
+  <table id="artifact" cellpadding="2" cellspacing="2" border="1">
+    <ul>
+      <li> Title: <%- object.title %> </li>
+      <li> Provenance: <%- object.provenance %></li>
+      <li> Description: <%- object.description %></li>
+      <li> Accession Year: <%- object.accessionyear %> </li>
+    </ul>
+    <img src=<%- object.primaryimageurl %> width=80px>
+
+  <%- include('footer') %>

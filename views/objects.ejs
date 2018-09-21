@@ -1,0 +1,33 @@
+<%- include('header') %>
+
+  <h1>Objects Listing</h1>
+
+  <table class="table table-striped">
+    <tr>
+      <th> Name </th>
+      <th> Image </td>
+      <th> People </th>
+      <th> See more </th>
+    </tr>
+        <% objects.forEach(object => { %>
+    <tr>
+      <td>
+      <a href="/object/<%- object.id %>">
+          <%- object.title %> </a>
+      </td>
+      <td>
+        <img src=<%- object.primaryimageurl %> width=80px>
+      </td>
+      <td>
+        <% object.people.forEach(people => { %>
+          <%- people.name %>
+        <% }); %>
+      </td>
+      <td>
+        <a href="<%- object.url %>"> See More</a>
+      </td>
+    </tr
+      <% }); %>
+    </table>
+
+  <%- include('footer') %>
