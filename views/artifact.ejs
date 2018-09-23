@@ -10,5 +10,24 @@
       <li> Accession Year: <%- object.accessionyear %> </li>
     </ul>
     <img src=<%- object.primaryimageurl %> width=80px>
+    <br> 
+    <form action="/add_comment/<%- object.objectnumber %>" method = GET>
+      Comment: <input type="text-area" name="comments">
+      <br>
+      <input type="submit" value="Submit">
+      <br>
+      <br>
+      <table class="table table-striped"> 
+        <tr> 
+          <th>Comments</th>
+        </tr>
+        <% comments.forEach(comment => { %>
+        <tr> 
+            <td><%- comment.text %></td>
+        </tr>
+        <% }); %>
+      </table> 
+    </form>
+
 
   <%- include('footer') %>

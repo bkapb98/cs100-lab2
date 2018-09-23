@@ -12,16 +12,18 @@
         <% objects.forEach(object => { %>
     <tr>
       <td>
-      <a href="/object/<%- object.id %>">
+      <a href="/object/<%- object.objectnumber %>">
           <%- object.title %> </a>
       </td>
       <td>
         <img src=<%- object.primaryimageurl %> width=80px>
       </td>
       <td>
-        <% object.people.forEach(people => { %>
-          <%- people.name %>
-        <% }); %>
+        <% if (object.people) { %>
+          <% object.people.forEach(people => { %>
+            <%- people.name %>
+          <% }); %>
+        <% } %>
       </td>
       <td>
         <a href="<%- object.url %>"> See More</a>
