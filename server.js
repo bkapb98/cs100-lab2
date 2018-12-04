@@ -5,7 +5,7 @@ require('cross-fetch/polyfill');
 // initialize universal constants 
 const app = express();
 const host = '127.0.0.1';
-const port = 8000;
+const port = process.env.PORT || 3000;
 let comments = [];
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
